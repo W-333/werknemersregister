@@ -76,4 +76,27 @@
     </div>
 </div>
 </body>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyBwjFGHS3XNFu4Rm6oUv645I0o3bRmmVHQ",
+    authDomain: "kraakman-beveiliging.firebaseapp.com",
+    projectId: "kraakman-beveiliging",
+    storageBucket: "kraakman-beveiliging.appspot.com",
+    messagingSenderId: "251031201196",
+    appId: "1:251031201196:web:3527c41f883bd7db6a8609",
+    measurementId: "G-J4EHWR4HCX"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
 </html>
