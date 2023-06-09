@@ -11,10 +11,11 @@
             margin: 0;
             padding: 0;
         }
-          .container {
+            .container {
         max-width: 600px;
         margin: 0 auto;
         padding: 40px;
+        text-align: center;
     }
 
     h1 {
@@ -41,18 +42,31 @@
         border: none;
         cursor: pointer;
         transition: background-color 0.3s ease;
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .button-container button:hover {
         background-color: #777;
     }
+
+    .logo {
+        max-width: 100px;
+        margin-bottom: 20px;
+    }
+</style>
 </style>
 </head>
 <body>
     <div class="container">
+        <img src="kraakman_beveiliging.png" alt="Kraakman Beveiliging Logo" class="logo">
         <h1>Kraakman Beveiliging - Werknemersregister</h1>
         <p>Hey Recruiters/Leiding, op deze webpagina kun je mensen ontslaan/aannemen. Vergeet niet wanneer je iemand aanneemt om hem de documenten te overhandigen, zowel de KvK documenten als de Bedrijfsbeleid documenten.</p>
-          <div class="button-container">
+            <div class="button-container">
         <a href="fire.html">
             <button>Ontslaan</button>
         </a>
