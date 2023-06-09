@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Kraakman Beveiliging - Ontslaan</title>
+    <style>
+        /* CSS styles for the page */
+        body {
+            background-color: #222;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 30px;
+        }
+
+        .form-field {
+            margin-bottom: 20px;
+        }
+
+        .form-field label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-field input[type="text"],
+        .form-field input[type="number"] {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+        }
+
+        .form-field select {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-field .submit-button {
+            background-color: #555;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-field .submit-button:hover {
+            background-color: #777;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Kraakman Beveiliging - Werknemer Ontslaan</h1>
+        <form id="myForm">
+            <div class="form-field">
+                <label for="name">Naam werknemer:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-field">
+                <label for="dob">Geboortedatum:</label>
+                <input type="text" id="dob" name="dob" required>
+            </div>
+            <div class="form-field">
+                <label for="bsn">BSN:</label>
+                <input type="number" id="bsn" name="bsn" required>
+            </div>
+            <div class="form-field">
+                <label for="position">Functie:</label>
+                <select id="position" name="position" required>
+                    <option value="">Selecteer functie</option>
+                    <option value="Stagiare Beveiliger">Stagiare Beveiliger</option>
+                    <option value="Junior Beveiliger">Junior Beveiliger</option>
+                    <option value="Medior Beveiliger">Medior Beveiliger</option>
+                    <option value="Senior Beveiliger">Senior Beveiliger</option>
+                    <option value="Hoofd Beveiliger">Hoofd Beveiliger</option>
+                    <option value="Leiding">Leiding</option>
+                    <option value="Manager">Manager</option>
+                    <option value="Eigenaar">Eigenaar</option>
+                </select>
+            </div>
+            <div class="form-field">
+                <button class="submit-button" type="submit">Ontsla werknemer</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("myForm").addEventListener("submit", sendFormData);
+
+        function sendFormData(event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const dob = document.getElementById("dob").value;
+            const bsn = document.getElementById("bsn").value;
+            const position = document.getElementById("position").value;
+
+            const payload = {
+                username: "Binnengekomen Ontslagen",
+                avatar_url: "",
+                content: `**Werknemer is ontslagen**\nNaam werknemer: ${name}\nGeboortedatum: ${dob}\nBSN: ${bsn}\nFunctie: ${position}`
+            };
+
+            const request = new XMLHttpRequest();
+            request.open("POST", "https://discord.com/api/webhooks/1111974239151603712/Ejp2taHNuRvijDlXhMfmvpRPq57QQW9n-jpys0X2m4Fg2kHx9uglqmFQ7eXksgwh-VUA");
+            request.setRequestHeader("Content-type", "application/json");
+
+            request.send(JSON.stringify(payload));
+
+            document.getElementById("myForm").reset();
+            alert("Ontslagformulier verzonden!");
+        }
+    </script>
+</body>
+
+</html>
